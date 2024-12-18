@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Správa financí</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Správa financí</h1>
+    <div class="inputs">
+      <div class="form-group">
+        <label for="income">Příjem:</label>
+        <input type="number" id="income" placeholder="Zadej příjem">
+        <select id="income-currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="CZK" selected>CZK</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="expense">Výdaj:</label>
+        <input type="number" id="expense" placeholder="Zadej výdaj">
+        <select id="expense-currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="CZK" selected>CZK</option>
+        </select>
+      </div>
+      <button id="add-button">Přidat</button>
+    </div>
+    <div class="stats">
+      <h2 id="balance">Zůstatek: 0.00 Kč</h2>
+      <p id="total-income">Celkový příjem: 0.00 Kč</p>
+      <p id="total-expense">Celkový výdaj: 0.00 Kč</p>
+    </div>
+    <div class="chart-container">
+      <canvas id="finance-chart"></canvas>
+    </div>
+    <div class="history">
+      <h2>Historie příjmů a výdajů</h2>
+      <ul id="history-list"></ul>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
